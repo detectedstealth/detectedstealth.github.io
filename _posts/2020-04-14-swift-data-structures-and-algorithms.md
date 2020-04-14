@@ -1,7 +1,7 @@
 ---
 title: Swift Data Structures & Algorithms
 author: Bruce Wade
-date: 2020-04-14 9:33:00 +0800
+date: 2020-04-14 9:33:00-0700
 categories: [Swift, Algorithms, Data Structures]
 tags: [swift]
 ---
