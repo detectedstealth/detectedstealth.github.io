@@ -2,7 +2,7 @@
 title: Swift Data Structures & Algorithms
 author: Bruce Wade
 date: 2020-04-14 9:33:00-0700
-categories: [Swift, Algorithms, Data Structures]
+categories: [Swift, Algorithms & Data Structures]
 tags: [swift]
 ---
 
@@ -15,7 +15,7 @@ Data Structures and Algorithms are an important concept to master in computer sc
 - Swift Standard Library
 
 ## Elementary Data Structures
-- Stack
+- [Stack](/posts/swift-stacks/)
 - Linked List
 - Queues
 
