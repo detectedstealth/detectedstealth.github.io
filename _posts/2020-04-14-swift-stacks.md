@@ -17,14 +17,14 @@ The concept of a stack is very simple to understand you place objects on top of 
 /// Generic structure for creating stacks of objects.
 struct Stack<Element> {
     private var storage: [Element] = []
-    public init() {}
+    init() {}
 
-    public mutating func push(_ element: Element) {
+    mutating func push(_ element: Element) {
         storage.append(element)
     }
 
     @discardableResult
-    public mutating func pop() -> Element? {
+    mutating func pop() -> Element? {
         storage.popLast()
     }
 }
@@ -41,7 +41,7 @@ struct Book {
 We need to add our books as if we were stacking them on a table. When we do this we order them with the one we want to read first on top of the stack (so added last).
 
 ```swift
-var booksToRead: Stack<Book> = []
+var booksToRead = Stack<Book>()
 booksToRead.push(Book(title: "Catalyst by Tutorials"))
 booksToRead.push(Book(title: "SwiftUI by Tutorials"))
 booksToRead.push(Book(title: "Data Structures & Algorithms in Swift"))
@@ -69,10 +69,8 @@ Becase we are using generics we must `map` over the elements in our storage clas
 
 ```swift
 extension Stack: CustomStringConvertible {
-    public var description: String {
-        """
-        \(storage.map { "\($0)" }.reversed().joined(separator: "\n"))
-        """
+    var description: String {
+        storage.map { "\($0)" }.reversed().joined(separator: "\n")
     }
 }
 ```
@@ -88,7 +86,7 @@ What if we want to only show the book titles on each line out put? We don't want
 
 ```swift
 extension Book: CustomStringConvertible {
-    public var description: String {
+    var description: String {
         title
     }
 }
