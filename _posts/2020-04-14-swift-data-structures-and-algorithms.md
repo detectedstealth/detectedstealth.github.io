@@ -16,7 +16,7 @@ Data Structures and Algorithms are an important concept to master in computer sc
 
 ## Elementary Data Structures
 - [Stack](/posts/swift-stacks/)
-- Linked List
+- [Linked List](/posts/swift-linked-lists/)
 - Queues
 
 ## Trees
