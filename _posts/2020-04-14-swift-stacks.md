@@ -15,16 +15,16 @@ The concept of a stack is very simple to understand you place objects on top of 
 
 ```swift
 /// Generic structure for creating stacks of objects.
-struct Stack<Element> {
-    private var storage: [Element] = []
+struct Stack<T> {
+    private var storage: [T] = []
     init() {}
 
-    mutating func push(_ element: Element) {
+    mutating func push(_ element: T) {
         storage.append(element)
     }
 
     @discardableResult
-    mutating func pop() -> Element? {
+    mutating func pop() -> T? {
         storage.popLast()
     }
 }

@@ -13,11 +13,11 @@ For stacks we used the standard library `Aarry` for storage. For Linked Lists th
 Let's first look at creating our `Node` structure which is pretty simple it contains a generic `Value` and a reference to the next `Node` on the right of it. The initializer sets the required value and optionally sets the next `Node`.
 
 ```swift
-class Node<Value> {
-    var value: Value
+class Node<T> {
+    var value: T
     var next: Node?
     
-    init(value: Value, next: Node? = nil) {
+    init(value: T, next: Node? = nil) {
         self.value = value
         self.next = next
     }
@@ -43,7 +43,7 @@ Now how would we go about printing all the nodes in the list? We know if next is
 
 ```swift
 // Generic function used to print all the Node's that are linked together.
-func printNodeList<Value>(_ headNode: Node<Value>?) {
+func printNodeList<T>(_ headNode: Node<T>?) {
     var currentNode: Node? = headNode
     while currentNode != nil {
         if let current = currentNode {
@@ -105,9 +105,9 @@ This is where Linked Lists come in, which are basically a management structure t
 First we will setup the basic structure than go over each of the features in order. The basic class needs a head `Node` which points to the front of the list, and a tail `Node` that points to the end of the list. Our Linked List will also be generic so it supports any value. In the definition of the structure there will be placeholder comments were the functions for each feature should be added. however to save space I will only show the function alone.
 
 ```swift
-struct LinkedList<Value> {
-    var head: Node<Value>?
-    var tail: Node<Value>?
+struct LinkedList<T> {
+    var head: Node<T>?
+    var tail: Node<T>?
     
     init() {}
 
@@ -119,7 +119,7 @@ struct LinkedList<Value> {
 }
 ```
 
-It would be nice to 
+It is pretty easy to check if our Linked List is empty by checking if the head is nil, if it is we can assume there is no `Node`'s and our list is empty.
 
 ```swift
 var isEmpty: Bool {
@@ -127,8 +127,10 @@ var isEmpty: Bool {
 }
 ```
 
+We already covered how to add a `Node` to the front of the list above, the only difference here is we have the tail `Node` to think about if the tail is nil we update it to the new `Node` we have just added otherwise we leave the tail `Node` how it was.
+
 ```swift
-mutating func push(_ value: Value) {
+mutating func push(_ value: T) {
     copyNodes()
     head = Node(value: value, next: head)
     if tail == nil {
@@ -137,8 +139,10 @@ mutating func push(_ value: Value) {
 }
 ```
 
+We also covered adding a node to the end of the list however now that we are keeping track of the tail `Node` we no longer need to loop through all the `Node`'s in the list. If the list is empty we will just reuse the push logic to handle updating the tail. Otherwise we need to update the tail of the Linked List.
+
 ```swift
-mutating func append(_ value: Value) {
+mutating func append(_ value: T) {
     copyNodes()
     guard !isEmpty else {
         push(value)
@@ -150,8 +154,9 @@ mutating func append(_ value: Value) {
 }
 ```
 
+To make adding and removing `Node`'s after a specific `Node` we need to create a helper method that given a index will loop through our linked list until we reach the target index returning the found `Node` or nil if not found.
 ```swift
-func node(at index: Int) -> Node<Value>? {
+func node(at index: Int) -> Node<T>? {
     var currentNode = head
     var currentIndex = 0
     
@@ -164,9 +169,10 @@ func node(at index: Int) -> Node<Value>? {
 }
 ```
 
+Inserting a `Node` after another node requires the value we are going to assign as well as the `Node` we want to insert after which we can find using the `node(at:)` method. First we check if the node provided is the tail node in which case we just append the new value and return the tail. Otherwise we update the nodes next value to the new node and the new nodes next will point to the previous nodes next node.
 ```swift
 @discardableResult
-mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
+mutating func insert(_ value: T, after node: Node<T>) -> Node<T> {
     copyNodes()
     guard tail !== node else {
         append(value)
@@ -178,10 +184,11 @@ mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
 }
 ```
 
+When poping off the first node so we need to `defer` the removal of the node so we can have access to the value. By updating the head of the Linked List to point to the currents heads next node we allow swifts reference counting to remove the removed nodes from memory. Also if we happened to have poped off the last node in the list we need to set the tail node to nil to ensure memory is cleaned up correctly. 
 ```swift
 // MARK: - Removing from the LinkedList
 @discardableResult
-mutating func pop() -> Value? {
+mutating func pop() -> T? {
     copyNodes()
     defer {
         head = head?.next
@@ -193,9 +200,10 @@ mutating func pop() -> Value? {
 }
 ```
 
+When removing the last node in a linked list we first make sure there is an actual node in the list by checking the head is not nil. Next if there is only a single node in the list we simply pop it. If the list contains more than two nodes we have to loop through the list and correctly set the last node to nil as well as updating the tail to the node before the last.
 ```swift
 @discardableResult
-mutating func removeLast() -> Value? {
+mutating func removeLast() -> T? {
     copyNodes()
     guard let head = head else { return nil }
     
@@ -217,9 +225,10 @@ mutating func removeLast() -> Value? {
 }
 ```
 
+When removing a node after a provided node we simple return the provided nodes next nodes value and defer the updating of the refercenes. If the node after the provided one is the last in the list we update the tail to point to the provided node. Otherwise we set the provided nodes next value to the node after the next one.
 ```swift
 @discardableResult
-mutating func remove(after node: Node<Value>) -> Value? {
+mutating func remove(after node: Node<T>) -> T? {
     guard let node = copyNodes(returningCopyOf: node) else { return nil }
     defer {
         if node.next === tail {
@@ -231,6 +240,7 @@ mutating func remove(after node: Node<Value>) -> Value? {
 }
 ```
 
+The copyNodes method that was used in a few of the methods above leverages the standard libraries isKnownUniquelyReferenced which will tell is if there is only one copy of the object in this case the head node. If there is we don't need to make a copy of any of the nodes. Otherwise we want to make a copy of the linked list so we don't change references in the original this is known as COW (copy on write).
 ```swift
 // MARK: - COW Support
 private mutating func copyNodes() {
@@ -256,14 +266,15 @@ private mutating func copyNodes() {
 }
 ```
 
+In specially situations such as deleting a node we want to return a copy of the node that is going to be deleted. This is because we are handling the removal of the node inside a defered block. Otherwise we the result will not be what is expected.
 ```swift
-private mutating func copyNodes(returningCopyOf node: Node<Value>?) -> Node<Value>? {
+private mutating func copyNodes(returningCopyOf node: Node<T>?) -> Node<T>? {
     guard !isKnownUniquelyReferenced(&head) else { return nil }
     guard var oldNode = head else { return nil }
     
     head = Node(value: oldNode.value)
     var newNode = head
-    var nodeCopy: Node<Value>?
+    var nodeCopy: Node<T>?
     
     while let nextOldNode = oldNode.next {
         if oldNode === node {
@@ -277,10 +288,11 @@ private mutating func copyNodes(returningCopyOf node: Node<Value>?) -> Node<Valu
 }
 ```
 
+For us to be able to use index lookup on our LinkedList we need to comform to the Collection protocol which requires a Comparable Index, startIndex, endIndex, a method for finding the index after the current Index and the subscript which will give us the node value.
 ```swift
 extension LinkedList: Collection {
     struct Index: Comparable {
-        var node: Node<Value>?
+        var node: Node<T>?
         
         static func ==(lhs: Index, rhs: Index) -> Bool {
             switch (lhs.node, rhs.node) {
@@ -318,5 +330,5 @@ extension LinkedList: Collection {
         position.node!.value
     }
 }
-
 ```
+> **TODO**: Clean up the wording used to explain the linked lists. 
