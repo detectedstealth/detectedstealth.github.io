@@ -8,7 +8,7 @@ tags: [swift]
 
 Data Structures and Algorithms are an important concept to master in computer science for efficent code. Below you will find links to tutorials:
 
-> **Note:** These topics for swift I have learned in [Data Structures & Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift) and these tutorials represent what I have learned from that book.
+> **Note:** These topics for swift I have learned in <a href="https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift" target="_blank">Data Structures & Algorithms in Swift</a> and these tutorials represent what I have learned from that book.
 
 ## Basics
 - Learn how to calculate complexity using Big-O
