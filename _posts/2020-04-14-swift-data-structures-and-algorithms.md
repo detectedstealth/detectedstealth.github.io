@@ -17,7 +17,7 @@ Data Structures and Algorithms are an important concept to master in computer sc
 ## Elementary Data Structures
 - [Stack](/posts/swift-stacks/)
 - [Linked List](/posts/swift-linked-lists/)
-- Queues
+- [Queues](/posts/swift-queues/)
 
 ## Trees
 - Trees
@@ -30,8 +30,10 @@ Data Structures and Algorithms are an important concept to master in computer sc
 - Priority Queues
 
 ## Sorting Algorithms
-- O(n2) Sorting
-- Merge Sort
+- [Bubble Sort](/posts/swift-bubble-sort/)
+- [Insertion Sort](/posts/swift-insertion-sort/)
+- [Selection Sort](/posts/swift-selection-sort/)
+- [Merge Sort](/posts/swift-merge-sort/)
 - Radix Sort
 - Heapsort
 - Quicksort
