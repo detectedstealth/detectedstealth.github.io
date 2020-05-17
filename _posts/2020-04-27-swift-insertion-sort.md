@@ -2,7 +2,7 @@
 title: Swift Insertion Sort
 author: Bruce Wade
 date: 2020-04-27 9:00:00-0700
-categories: [Algorithms and Data Structures, Swift, Sorting]
+categories: [Algorithms and Data Structures, Swift]
 tags: [swift, Sorting]
 ---
 ```swift

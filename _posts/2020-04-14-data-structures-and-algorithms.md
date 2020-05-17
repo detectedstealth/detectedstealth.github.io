@@ -2,7 +2,7 @@
 title: Data Structures & Algorithms
 author: Bruce Wade
 date: 2020-04-14 9:33:00-0700
-categories: [Algorithms and Data Structures]
+categories: []
 tags: [Swift, Python]
 ---
 

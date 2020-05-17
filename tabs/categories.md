@@ -14,7 +14,7 @@ title: Categories
   {% assign category_name = category | first %}
   {% assign posts_of_category = category | last %}
   {% assign first_post = posts_of_category | first %}
-
+  
   {% if category_name == first_post.categories[0] %}
     {% assign sub_categories = "" | split: "" %}
 
@@ -80,10 +80,10 @@ title: Categories
       </ul>
     </div>
     {% endif %}
-
   </div> <!-- .card -->
 
   {% endif %}
+
 {% endfor %}
 
 <script src="{{ site.baseurl }}/assets/js/dist/category-collapse.min.js" async></script>
