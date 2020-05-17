@@ -2,7 +2,7 @@
 title: Swift Stacks
 author: Bruce Wade
 date: 2020-04-14 9:54:00-0700
-categories: [Algorithms & Data Structures, Swift]
+categories: [Algorithms and Data Structures, Swift]
 tags: [swift]
 ---
 In our day to day lives we see stacks everywhere. 

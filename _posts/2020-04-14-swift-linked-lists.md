@@ -2,7 +2,7 @@
 title: Swift Linked Lists
 author: Bruce Wade
 date: 2020-04-15 14:22:00-0700
-categories: [Algorithms & Data Structures, Swift]
+categories: [Algorithms and Data Structures, Swift]
 tags: [swift]
 ---
 

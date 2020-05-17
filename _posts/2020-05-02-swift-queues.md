@@ -2,7 +2,7 @@
 title: Swift Queues
 author: Bruce Wade
 date: 2020-05-02 08:44:00-0700
-categories: [Algorithms & Data Structures, Swift]
+categories: [Algorithms and Data Structures, Swift]
 tags: [swift]
 ---
 
