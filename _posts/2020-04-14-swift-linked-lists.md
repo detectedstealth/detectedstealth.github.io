@@ -2,24 +2,40 @@
 title: Swift Linked Lists
 author: Bruce Wade
 date: 2020-04-15 14:22:00-0700
-categories: [Swift, Algorithms & Data Structures]
+categories: [Algorithms & Data Structures, Swift]
 tags: [swift]
 ---
 
 Now that we have looked at [stacks](/posts/swift-stacks/) which are efficent at adding and removing elements from the end/top of the stack, lets now look at Linked Lists which are efficent at add/removing elements from the beginning/front.
 
-For stacks we used the standard library `Aarry` for storage. For Linked Lists there we need to build our own storage class. Linked Lists work with nodes, where a `Node` can point to another `Node` next to it and if there is no `Node` next we know we are at the end of the Linked List.
+For stacks we used the standard library `Array` for storage. We will build our own storage type for the Linked Lists. Linked Lists work with nodes, where a `Node` can point to another `Node` next to it and if there is no `Node` next we know we are at the end of the Linked List. Nodes can also point to the previous node in a `Doubly Linked List`, and the last node's next could point to the first node with the first nodes previous pointing to the last node in a `Cicular Linked List`
 
-Let's first look at creating our `Node` structure which is pretty simple it contains a generic `Value` and a reference to the next `Node` on the right of it. The initializer sets the required value and optionally sets the next `Node`.
+### Singly Linked list
+This type of linked list has a next reference a head and tail. Where we know we are at the tall if the nodes next is nil.
+
+> Node(head) -> Node -> Node(tail)
+
+### Doubly Linked List
+This type of linked list is the same as the singly version with the addition of a previous reference.
+
+> Node(head) <-> Node <-> Node(tail)
+
+### Circular Linked List
+This type can apply to both singly and doubly link lists. The difference with a singly the tail has a reference to the head. With a doubly the head also has a reference to the tail which allows iterations in both directions.
+
+### Implementation
+Let's first look at creating our `Node` class which is pretty simple it contains a generic `T` and a reference to the next `Node` on the right of it. The initializer sets the required value and optionally sets the next `Node`. We will also add a weak previous `Node` which points to nil if we are at the beginning, or to the tail if we are using a Cicular linked list. It is set as weak to avoid retain cycles.
 
 ```swift
 class Node<T> {
     var value: T
     var next: Node?
+    weak var previous: Node?
     
-    init(value: T, next: Node? = nil) {
+    init(value: T, next: Node? = nil, previous: Node? = nil) {
         self.value = value
         self.next = next
+        self.previous = previous
     }
 }
 ```
@@ -75,7 +91,7 @@ This would print:
 Node 5 -> Node 1 -> Node 2 -> Node 3 -> Node 4 -> nil 
 ```
 
-Greate we have seen how we can add `Node`'s to the front of the list. What if we wanted to append them to the end of the list? This would require us looping through the list until we find a next that is nil, this will indicate we have found the end and we can update the next to the new `Node` we want to add.
+Greate we have seen how we can add `Node`'s to the front of the list. What if we wanted to append them to the end of the list? This would require us looping through the list until we find a next that is nil (we cannot rely on this for a Cicular Linked List), this will indicate we have found the end and we can update the next to the new `Node` we want to add.
 
 ```swift
 var node6 = Node(value: "Node 6")
@@ -102,10 +118,10 @@ There are more feature we would like to have such as inserting after a node, rem
 
 This is where Linked Lists come in, which are basically a management structure that keeps track of the first and last `Node`'s in a list, as well as provide all the functions for adding and removing `Node`'s.
 
-First we will setup the basic structure than go over each of the features in order. The basic class needs a head `Node` which points to the front of the list, and a tail `Node` that points to the end of the list. Our Linked List will also be generic so it supports any value. In the definition of the structure there will be placeholder comments were the functions for each feature should be added. however to save space I will only show the function alone.
+First we will setup the basic class than go over each of the features in order. The basic class needs a head `Node` which points to the front of the list, and a tail `Node` that points to the end of the list. Our Linked List will also be generic so it supports any value. In the definition of the structure there will be placeholder comments were the functions for each feature should be added. however to save space I will only show the function alone.
 
 ```swift
-struct LinkedList<T> {
+class LinkedList<T> {
     var head: Node<T>?
     var tail: Node<T>?
     

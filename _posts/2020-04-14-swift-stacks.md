@@ -2,7 +2,7 @@
 title: Swift Stacks
 author: Bruce Wade
 date: 2020-04-14 9:54:00-0700
-categories: [Swift, Algorithms & Data Structures]
+categories: [Algorithms & Data Structures, Swift]
 tags: [swift]
 ---
 In our day to day lives we see stacks everywhere. 
@@ -11,7 +11,7 @@ In our day to day lives we see stacks everywhere.
 - When ordering takeout they stack the containers on top of each other in the bag.
 - Even when making your bed a stack is being used, the sheet, than blanket/pillows on top etc.
 
-The concept of a stack is very simple to understand you place objects on top of each other and you remove the last one you added on top first (LIFO). This makes using an array as your storage an easy choice, as it is efficent to add an element to the end of an array and also efficent to remove an element from the end of an array. Stacks have two opperations to push an element on top of the stack and to pop and element from the top of the stack.
+The concept of a stack is very simple to understand you place objects on top of each other and you remove the last one you added on top first (LIFO). This makes using an array as your storage an easy choice, as it is efficent to add an element to the end of an array and also efficent to remove an element from the end of an array. Stacks have two opperations to push an element on top of the stack and to pop an element from the top of the stack.
 
 ```swift
 /// Generic structure for creating stacks of objects.
@@ -26,6 +26,14 @@ struct Stack<T> {
     @discardableResult
     mutating func pop() -> T? {
         storage.popLast()
+    }
+
+    var isEmpty: Bool {
+        storage.isEmpty
+    }
+
+    var top: T? {
+        storage.last
     }
 }
 ```
@@ -73,6 +81,9 @@ extension Stack: CustomStringConvertible {
         storage.map { "\($0)" }.reversed().joined(separator: "\n")
     }
 }
+
+// print our stack
+print(booksToRead)
 ```
 
 The above code will work but it prints out our data like the following:
@@ -82,7 +93,7 @@ Book(title: "SwiftUI by Tutorials")
 Book(title: "Catalyst by Tutorials")
 ```
 
-What if we want to only show the book titles on each line out put? We don't want to change our generic Stack so we can also make our Book struct conform to the `CustomStringConvertible` protocol.
+What if we want to only show the book titles on each line output? We don't want to change our generic Stack so we can also make our Book struct conform to the `CustomStringConvertible` protocol.
 
 ```swift
 extension Book: CustomStringConvertible {
@@ -98,3 +109,5 @@ Now if we print our stack collection we will have the following:
 SwiftUI by Tutorials
 Catalyst by Tutorials
 ```
+
+Next up lets take a look at [Linked Lists](/posts/swift-linked-lists)
