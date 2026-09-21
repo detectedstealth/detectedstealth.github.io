@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleTerminal, isTerminalOpen
           </div>
           <div className="pt-2 flex flex-col gap-2">
             <a
-              href="mailto:bruce.wade@gmail.com"
+              href="mailto:hello@brucewade.dev"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-lg text-sm transition-all"
             >
               <span>Connect Directly</span>

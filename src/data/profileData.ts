@@ -37,7 +37,7 @@ export const PROFILE_DATA = {
   title: "Systems Engineer • Simulation & Tools • Founder",
   headline: "Engineering Determinism for Physical AI, Robotics QA & High-Performance Engines",
   location: "Vancouver, British Columbia, Canada",
-  email: "bruce.wade@gmail.com",
+  email: "hello@brucewade.dev",
   linkedin: "https://www.linkedin.com/in/brucelwade",
   warplyUrl: "https://warplydesigned.com",
   status: "Available for High-Impact Advisory & Systems Engineering Roles",
