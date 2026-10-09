@@ -20,10 +20,10 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <div className="text-white font-bold tracking-wider">
-                BRUCE WADE // SYSTEMS ARCHITECTURE
+                BRUCE WADE // PRINCIPAL SYSTEMS ENGINEER
               </div>
               <div className="text-[11px] text-slate-500">
-                PHYSICAL AI • ISAAC SIM • UNREAL C++ • OPENUSD
+                PYTHON • MOBILE ARCHITECTURE • CI/CD & AUTOMATION • SYSTEMS
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
             <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
             <a href="#pillars" className="hover:text-emerald-400 transition-colors">Pillars</a>
-            <a href="#sim-lab" className="hover:text-cyan-400 transition-colors">Sim Lab</a>
+            <a href="#sim-lab" className="hover:text-cyan-400 transition-colors">Systems Lab</a>
             <a href="#journey" className="hover:text-purple-400 transition-colors">Career Journey</a>
             <a href="#portfolio" className="hover:text-emerald-400 transition-colors">Portfolio</a>
             <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>

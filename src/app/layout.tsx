@@ -2,17 +2,24 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Bruce Wade | Systems Engineer • Simulation & Tools • Founder',
+  title: 'Bruce Wade | Principal Systems & Software Engineer • Python • Mobile Architecture • Automation',
   description:
-    'Systems architecture portfolio for Bruce Wade: Specializing in Physical AI, NVIDIA Isaac Sim, OpenUSD pipelines, Unreal Engine C++ dual-window simulation, and scalable cloud architecture.',
+    'Systems architecture portfolio for Bruce Wade: Specializing in high-throughput Python backends, native mobile architecture (iOS/Android), CI/CD pipeline automation, and cloud-native observability.',
   keywords: [
     'Bruce Wade',
-    'Systems Engineer',
-    'Isaac Sim',
-    'Physical AI',
-    'Robotics Synthetic Data',
-    'OpenUSD',
-    'Unreal Engine C++',
+    'Principal Systems Engineer',
+    'Python Backend',
+    'FastAPI',
+    'Django',
+    'Celery',
+    'Mobile Architecture',
+    'Swift',
+    'SwiftUI',
+    'Kotlin',
+    'CI/CD Automation',
+    'GitHub Actions',
+    'Jenkins',
+    'OpenTelemetry',
     'Warply Designed Inc'
   ],
   authors: [{ name: 'Bruce Wade' }],
