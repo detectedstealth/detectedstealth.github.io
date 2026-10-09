@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
                 </div>
                 <div className="text-xs sm:text-sm text-slate-300 leading-normal">
                   <span className="text-white font-semibold">Principal Systems Consultant at Warply Designed Inc.</span> (14+ yrs).
-                  Author of <em>OS X App Development with CloudKit</em> & technical reviewer for 11 Swift engineering volumes at Apress. Lead on Salesforce Field Service mobile tooling & C++ simulation engines.
+                  Author of <em>OS X App Development with CloudKit</em> & technical reviewer for 11 Swift engineering volumes at Apress. Contributed on Salesforce Field Service mobile tooling & C++ simulation engines.
                 </div>
               </div>
             </div>
