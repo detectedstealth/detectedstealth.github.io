@@ -8,6 +8,8 @@ import {
   Cpu, 
   Layers, 
   Server, 
+  Smartphone,
+  GitBranch,
   BookOpen, 
   ChevronDown, 
   ChevronUp, 
@@ -22,8 +24,10 @@ export const CareerJourney: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
     warply: true,
-    'theory-studios': true,
+    recruitology: true,
+    salesforce: true,
     apress: true,
+    'theory-studios': true,
   });
 
   const toggleExpand = (id: string) => {
@@ -51,9 +55,10 @@ export const CareerJourney: React.FC = () => {
   });
 
   const categoryIcons = {
-    simulation: Cpu,
-    engine: Layers,
-    enterprise: Server,
+    python: Server,
+    mobile: Smartphone,
+    automation: GitBranch,
+    systems: Cpu,
     author: BookOpen,
   };
 
@@ -72,23 +77,23 @@ export const CareerJourney: React.FC = () => {
                 Engineering Journey & Milestones
               </h2>
               <p className="text-slate-400 font-mono text-xs sm:text-sm mt-1">
-                From low-level graphics shaders and C++ engines to enterprise architecture, 12 published technical books, and Physical AI pipelines.
+                From low-level graphics shaders and C++ engines to high-throughput Python backends, enterprise mobile architectures, and 12 published Apple platform books.
               </p>
             </div>
 
             {/* Quick Actions */}
-            <div className="flex items-center gap-3 text-xs font-mono">
+            <div className="flex items-center gap-2 text-xs font-mono shrink-0 whitespace-nowrap">
               <button
                 onClick={expandAll}
-                className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white transition-all"
+                className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white transition-all whitespace-nowrap"
               >
                 Expand All
               </button>
               <button
                 onClick={collapseAll}
-                className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white transition-all"
+                className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white transition-all whitespace-nowrap"
               >
-                Collapse
+                Collapse All
               </button>
             </div>
           </div>
@@ -98,9 +103,10 @@ export const CareerJourney: React.FC = () => {
         <div className="flex flex-wrap gap-2 mb-12">
           {[
             { id: 'all', label: 'All Milestones', count: PROFILE_DATA.experience.length },
-            { id: 'simulation', label: 'Simulation & Physical AI', count: PROFILE_DATA.experience.filter(e => e.category === 'simulation').length },
-            { id: 'engine', label: 'Engine & Graphics C++', count: PROFILE_DATA.experience.filter(e => e.category === 'engine').length },
-            { id: 'enterprise', label: 'Enterprise Cloud & Scale', count: PROFILE_DATA.experience.filter(e => e.category === 'enterprise').length },
+            { id: 'python', label: 'Python & Backend', count: PROFILE_DATA.experience.filter(e => e.category === 'python').length },
+            { id: 'mobile', label: 'Mobile Architecture', count: PROFILE_DATA.experience.filter(e => e.category === 'mobile').length },
+            { id: 'automation', label: 'Automation & CI/CD', count: PROFILE_DATA.experience.filter(e => e.category === 'automation').length },
+            { id: 'systems', label: 'Systems & Sim', count: PROFILE_DATA.experience.filter(e => e.category === 'systems').length },
             { id: 'author', label: 'Publications & Authorship', count: PROFILE_DATA.experience.filter(e => e.category === 'author').length },
           ].map((filter) => (
             <button
@@ -173,11 +179,11 @@ export const CareerJourney: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 self-end md:self-auto">
-                      <div className="text-xs font-mono text-slate-500 group-hover:text-slate-300 hidden sm:block">
+                    <div className="flex items-center gap-3 shrink-0 self-end md:self-auto whitespace-nowrap">
+                      <div className="text-xs font-mono text-slate-500 group-hover:text-slate-300 hidden sm:block whitespace-nowrap">
                         {isExpanded ? 'Hide Details' : 'View Details'}
                       </div>
-                      <div className="p-1.5 rounded-lg bg-slate-800 text-slate-400 group-hover:text-white">
+                      <div className="p-1.5 rounded-lg bg-slate-800 text-slate-400 group-hover:text-white shrink-0">
                         {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                       </div>
                     </div>

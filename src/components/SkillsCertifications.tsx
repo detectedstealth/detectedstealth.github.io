@@ -17,14 +17,14 @@ import { PROFILE_DATA } from '@/data/profileData';
 
 export const SkillsCertifications: React.FC = () => {
   const [activeSkillCategory, setActiveSkillCategory] = useState<
-    'simulationAndRobotics' | 'engineAndGraphics' | 'languagesAndTools' | 'enterpriseAndCloud'
-  >('simulationAndRobotics');
+    'pythonAndAi' | 'mobileAndApple' | 'automationAndDevops' | 'systemsAndEngines'
+  >('pythonAndAi');
 
   const categoryTitles = {
-    simulationAndRobotics: 'Simulation & Physical AI',
-    engineAndGraphics: 'Engine & Real-Time Graphics',
-    languagesAndTools: 'Core Languages & Tooling',
-    enterpriseAndCloud: 'Enterprise Backend & Cloud',
+    pythonAndAi: 'Python & AI Systems',
+    mobileAndApple: 'Mobile Architecture & Apple',
+    automationAndDevops: 'Automation, CI/CD & Observability',
+    systemsAndEngines: 'Systems, Engines & Simulation',
   };
 
   const badgeTypeStyles = {
@@ -32,6 +32,8 @@ export const SkillsCertifications: React.FC = () => {
     systems: 'border-cyan-500/30 bg-cyan-500/10 text-cyan-300',
     data: 'border-purple-500/30 bg-purple-500/10 text-purple-300',
     hardware: 'border-amber-500/30 bg-amber-500/10 text-amber-300',
+    cloud: 'border-blue-500/30 bg-blue-500/10 text-blue-300',
+    ai: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300',
   };
 
   return (
@@ -47,7 +49,7 @@ export const SkillsCertifications: React.FC = () => {
             Technical Mastery, Certifications & Education
           </h2>
           <p className="text-slate-400 font-mono text-xs sm:text-sm max-w-2xl">
-            A comprehensive matrix of low-level graphics proficiency, simulation toolchains, formal engineering accreditations, and systems mastery.
+            A comprehensive matrix of Python backend engineering, native Apple mobile architectures, CI/CD & Observability, and systems programming mastery.
           </p>
         </div>
 
@@ -76,10 +78,10 @@ export const SkillsCertifications: React.FC = () => {
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 text-[11px] font-mono text-slate-400 mt-4 space-y-2">
               <div className="flex items-center gap-1.5 text-emerald-400">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>UNREAL TECH ART CERTIFIED</span>
+                <span>OBSERVABILITY & SYSTEMS MASTERY</span>
               </div>
               <p className="text-slate-500 leading-normal">
-                Passed the official Unreal Technical Art Exam to unlock Unreal Service Partner accreditation.
+                Continuous training across OpenTelemetry (Loki/Tempo/Prometheus/Grafana), Agentic AI, and Unreal Tech Art certification.
               </p>
             </div>
           </div>

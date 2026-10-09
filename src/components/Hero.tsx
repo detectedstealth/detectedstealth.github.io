@@ -13,7 +13,11 @@ import {
   Binary,
   CheckCircle2,
   Share2,
-  ExternalLink
+  ExternalLink,
+  Server,
+  Smartphone,
+  GitBranch,
+  BookOpen
 } from 'lucide-react';
 import { PROFILE_DATA } from '@/data/profileData';
 
@@ -24,7 +28,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
   const [fps, setFps] = useState<number>(120);
-  const [activeTelemetryTab, setActiveTelemetryTab] = useState<'sim' | 'engine' | 'scale'>('sim');
+  const [activeTelemetryTab, setActiveTelemetryTab] = useState<'python' | 'mobile' | 'cicd' | 'systems'>('python');
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -53,39 +57,36 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
         <div className="flex flex-wrap items-center gap-2 mb-6">
           <div className="cyber-badge">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <span>PHYSICAL AI</span>
+            <span>PYTHON & DISTRIBUTED SYSTEMS</span>
           </div>
           <div className="cyber-badge !border-cyan-500/30 !bg-cyan-500/10 !text-cyan-300">
-            <Boxes className="w-3 h-3" />
-            <span>NVIDIA ISAAC SIM & OPENUSD</span>
+            <Smartphone className="w-3 h-3" />
+            <span>NATIVE MOBILE (IOS / SWIFT)</span>
           </div>
           <div className="cyber-badge !border-purple-500/30 !bg-purple-500/10 !text-purple-300">
-            <Layers className="w-3 h-3" />
-            <span>UNREAL C++ ENGINES</span>
+            <GitBranch className="w-3 h-3" />
+            <span>CI/CD & AUTOMATION</span>
           </div>
           <div className="cyber-badge !border-amber-500/30 !bg-amber-500/10 !text-amber-300">
-            <Binary className="w-3 h-3" />
+            <BookOpen className="w-3 h-3" />
             <span>12X PUBLISHED TECH BOOKS</span>
           </div>
         </div>
 
         {/* Grid Layout: Main Headline + Live Diagnostic HUD */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column (8 cols): Typography & Pitch */}
+          {/* Left Column (7 cols): Typography & Pitch */}
           <div className="lg:col-span-7 space-y-6">
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
               Architecting{' '}
               <span className="text-gradient-cyan-mint">
-                Deterministic Simulation
-              </span>{' '}
-              & High-Performance Systems.
+                Scalable Python Backends
+              </span>,{' '}
+              Native Mobile Systems & Automation.
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-300 font-light leading-relaxed max-w-2xl">
-              I specialize in complex spaces where clarity and architecture matter — from{' '}
-              <strong className="text-emerald-300 font-semibold">robotics synthetic data</strong> and{' '}
-              <strong className="text-cyan-300 font-semibold">NVIDIA Isaac Sim / OpenUSD pipelines</strong>, to{' '}
-              <strong className="text-purple-300 font-semibold">dual-window Unreal C++ simulation engines</strong> and scalable cloud backends.
+              Over 15+ years engineering high-concurrency <strong className="text-emerald-300 font-semibold">Python distributed microservices</strong> (85% ORM query reduction), mission-critical <strong className="text-cyan-300 font-semibold">native Apple iOS/Android platforms</strong>, and robust <strong className="text-purple-300 font-semibold">CI/CD & Observability pipelines</strong>.
             </p>
 
             {/* Quick Pitch Callout */}
@@ -96,8 +97,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
                   <Activity className="w-4 h-4" />
                 </div>
                 <div className="text-xs sm:text-sm text-slate-300 leading-normal">
-                  <span className="text-white font-semibold">Founder at Warply Designed Inc.</span> (14+ yrs) & Lead Pipeline Engineer.
-                  Author of <em>OS X App Development with CloudKit</em> & technical reviewer for 11 Swift engineering volumes at Apress.
+                  <span className="text-white font-semibold">Principal Systems Consultant at Warply Designed Inc.</span> (14+ yrs).
+                  Author of <em>OS X App Development with CloudKit</em> & technical reviewer for 11 Swift engineering volumes at Apress. Lead on Salesforce Field Service mobile tooling & C++ simulation engines.
                 </div>
               </div>
             </div>
@@ -117,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-100 border border-slate-700 hover:border-cyan-400/60 font-mono text-xs font-semibold tracking-wide transition-all shadow-lg hover:shadow-[0_0_20px_rgba(0,210,255,0.2)]"
               >
                 <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>Launch Sim Lab Demo</span>
+                <span>Launch Systems Lab</span>
               </button>
 
               <button
@@ -162,63 +163,115 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
               </div>
 
               {/* Telemetry Switcher Tabs */}
-              <div className="grid grid-cols-3 gap-1 bg-black/40 p-1 rounded-lg mt-4 text-[11px] font-mono">
+              <div className="grid grid-cols-4 gap-1 bg-black/40 p-1 rounded-lg mt-4 text-[10px] font-mono">
                 <button
-                  onClick={() => setActiveTelemetryTab('sim')}
+                  onClick={() => setActiveTelemetryTab('python')}
                   className={`py-1.5 rounded text-center transition-all ${
-                    activeTelemetryTab === 'sim'
+                    activeTelemetryTab === 'python'
                       ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  Robotics Sim
+                  Python
                 </button>
                 <button
-                  onClick={() => setActiveTelemetryTab('engine')}
+                  onClick={() => setActiveTelemetryTab('mobile')}
                   className={`py-1.5 rounded text-center transition-all ${
-                    activeTelemetryTab === 'engine'
+                    activeTelemetryTab === 'mobile'
                       ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  Unreal C++
+                  Mobile
                 </button>
                 <button
-                  onClick={() => setActiveTelemetryTab('scale')}
+                  onClick={() => setActiveTelemetryTab('cicd')}
                   className={`py-1.5 rounded text-center transition-all ${
-                    activeTelemetryTab === 'scale'
+                    activeTelemetryTab === 'cicd'
                       ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  Scale Metrics
+                  CI/CD
+                </button>
+                <button
+                  onClick={() => setActiveTelemetryTab('systems')}
+                  className={`py-1.5 rounded text-center transition-all ${
+                    activeTelemetryTab === 'systems'
+                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold'
+                      : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Systems
                 </button>
               </div>
 
               {/* Dynamic HUD Content */}
               <div className="mt-4 space-y-3 font-mono text-xs">
-                {activeTelemetryTab === 'sim' && (
+                {activeTelemetryTab === 'python' && (
                   <div className="space-y-2.5">
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Environment:</span>
-                      <span className="text-emerald-300 font-semibold">NVIDIA Isaac Sim 4.x</span>
+                      <span className="text-slate-400">Core Frameworks:</span>
+                      <span className="text-emerald-300 font-semibold">FastAPI, Django, Celery</span>
                     </div>
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Scene Standard:</span>
-                      <span className="text-cyan-300 font-semibold">OpenUSD (Universal Scene Desc)</span>
+                      <span className="text-slate-400">Query Optimization:</span>
+                      <span className="text-emerald-400 font-bold">85% Relational Query Reduction</span>
                     </div>
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Domain Randomizer:</span>
-                      <span className="text-purple-300 font-semibold">Deterministic Physics / Lighting</span>
+                      <span className="text-slate-400">Queue Architecture:</span>
+                      <span className="text-cyan-300 font-semibold">RabbitMQ & Redis Worker Pools</span>
                     </div>
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Ingestion Pipeline:</span>
-                      <span className="text-amber-300 font-semibold">Automated CAD -&gt; USD / glTF</span>
+                      <span className="text-slate-400">Web Automation:</span>
+                      <span className="text-purple-300 font-semibold">Scrapy Headless Ingestion</span>
                     </div>
                   </div>
                 )}
 
-                {activeTelemetryTab === 'engine' && (
+                {activeTelemetryTab === 'mobile' && (
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Native Platforms:</span>
+                      <span className="text-cyan-300 font-semibold">Swift, SwiftUI, Objective-C, Kotlin</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Enterprise Mobile:</span>
+                      <span className="text-emerald-300 font-semibold">Salesforce Field Service iOS</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Apress Author:</span>
+                      <span className="text-amber-300 font-semibold">12 Published Swift Books</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Deployment Pipeline:</span>
+                      <span className="text-purple-300 font-semibold">Fastlane Multi-Track Signing</span>
+                    </div>
+                  </div>
+                )}
+
+                {activeTelemetryTab === 'cicd' && (
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">CI/CD Runners:</span>
+                      <span className="text-purple-300 font-semibold">GitHub Actions & Jenkins</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Observability:</span>
+                      <span className="text-emerald-300 font-semibold">OpenTelemetry, Loki, Tempo, Grafana</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Containerization:</span>
+                      <span className="text-cyan-300 font-semibold">Docker & Kubernetes (K8s)</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+                      <span className="text-slate-400">Agentic Tooling:</span>
+                      <span className="text-amber-300 font-semibold">LLM Tool Calling & Auto-Evaluators</span>
+                    </div>
+                  </div>
+                )}
+
+                {activeTelemetryTab === 'systems' && (
                   <div className="space-y-2.5">
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
                       <span className="text-slate-400">Engine Stack:</span>
@@ -229,33 +282,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
                       <span className="text-emerald-300 font-semibold">Dual Synchronized Viewports</span>
                     </div>
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Input Telemetry:</span>
-                      <span className="text-purple-300 font-semibold">Headless 6DoF VR Trackers</span>
+                      <span className="text-slate-400">Simulation & CAD:</span>
+                      <span className="text-purple-300 font-semibold">NVIDIA Isaac Sim & OpenUSD</span>
                     </div>
                     <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Platform Deployment:</span>
-                      <span className="text-amber-300 font-semibold">Proprietary Console SDKs + C# Launcher</span>
-                    </div>
-                  </div>
-                )}
-
-                {activeTelemetryTab === 'scale' && (
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Query Optimization:</span>
-                      <span className="text-emerald-400 font-bold">85% ORM Query Reduction</span>
-                    </div>
-                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Technical Books:</span>
-                      <span className="text-cyan-300 font-semibold">12 Volumes (Apress / Springer)</span>
-                    </div>
-                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">High-Availability:</span>
-                      <span className="text-purple-300 font-semibold">DDoS Mitigated / Zero Downtime</span>
-                    </div>
-                    <div className="flex items-center justify-between p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-                      <span className="text-slate-400">Studio Consulting:</span>
-                      <span className="text-amber-300 font-semibold">Warply Designed (14+ Yrs)</span>
+                      <span className="text-slate-400">Platforms:</span>
+                      <span className="text-amber-300 font-semibold">Proprietary Console SDKs + Win32</span>
                     </div>
                   </div>
                 )}
@@ -280,16 +312,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
         </div>
 
         {/* Highlight Stats Ribbon */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-white/10 items-stretch">
           {PROFILE_DATA.stats.map((st, i) => (
             <div
               key={i}
-              className="p-4 rounded-xl bg-slate-900/40 border border-white/5 hover:border-emerald-500/30 transition-all group"
+              className="p-4 rounded-xl bg-slate-900/40 border border-white/5 hover:border-emerald-500/30 transition-all group flex flex-col justify-between min-h-[96px]"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono group-hover:text-emerald-400 transition-colors">
-                {st.value}
+              <div className="flex items-center min-h-[2.25rem]">
+                <div
+                  className={`font-extrabold text-white font-mono group-hover:text-emerald-400 transition-colors whitespace-nowrap ${
+                    st.value.length > 5
+                      ? 'text-xs sm:text-xs md:text-[11px] lg:text-xs xl:text-sm tracking-tight text-emerald-300'
+                      : 'text-2xl sm:text-3xl'
+                  }`}
+                >
+                  {st.value}
+                </div>
               </div>
-              <div className="text-xs text-slate-400 font-mono mt-1">
+              <div className="text-xs text-slate-400 font-mono mt-2">
                 {st.label}
               </div>
             </div>

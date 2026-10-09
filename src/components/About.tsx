@@ -6,6 +6,7 @@ import {
   Layers, 
   GitBranch, 
   Server, 
+  Smartphone,
   ChevronRight, 
   ShieldAlert, 
   TerminalSquare, 
@@ -19,10 +20,11 @@ export const About: React.FC = () => {
   const [activePillarIndex, setActivePillarIndex] = useState(0);
 
   const iconMap = {
+    Server: Server,
+    Smartphone: Smartphone,
+    GitBranch: GitBranch,
     Cpu: Cpu,
     Layers: Layers,
-    GitBranch: GitBranch,
-    Server: Server,
   };
 
   return (
@@ -35,10 +37,10 @@ export const About: React.FC = () => {
             <span>01 // ARCHITECTURAL PHILOSOPHY</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Systems Architecture & Physical AI Philosophy
+            Systems Architecture, Automation & Software Engineering
           </h2>
           <p className="text-slate-400 font-mono text-xs sm:text-sm max-w-3xl">
-            Deterministic foundations, low-level rendering mechanics, and scalable pipelines designed to eliminate friction in robotics simulation and enterprise systems.
+            Resilient backend architectures, native mobile platforms, production CI/CD automation, and deterministic simulation engineering.
           </p>
         </div>
 
@@ -49,7 +51,7 @@ export const About: React.FC = () => {
             <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-5 border border-slate-800">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                The Core Thesis: Engineering Determinism
+                The Core Thesis: Engineering Determinism & Scale
               </h3>
               
               {PROFILE_DATA.bio.map((paragraph, idx) => (
@@ -73,8 +75,8 @@ export const About: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             <div className="glass-panel rounded-2xl p-6 border border-slate-800">
               <div className="text-xs font-mono text-slate-400 mb-4 flex items-center justify-between">
-                <span>SIMULATION PIPELINE TOPOLOGY</span>
-                <span className="text-emerald-400">DETERMINISTIC</span>
+                <span>SYSTEM LIFECYCLE TOPOLOGY</span>
+                <span className="text-emerald-400">PRODUCTION FLOW</span>
               </div>
 
               {/* Step Flow */}
@@ -84,9 +86,9 @@ export const About: React.FC = () => {
                     <div className="w-5 h-5 rounded bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-[10px]">
                       01
                     </div>
-                    <span className="text-slate-200">CAD & Hierarchy Ingestion</span>
+                    <span className="text-slate-200">Python APIs & Async Ingestion</span>
                   </div>
-                  <span className="text-slate-500 text-[10px]">NVIDIA Kit / Python</span>
+                  <span className="text-slate-500 text-[10px]">FastAPI / Scrapy</span>
                 </div>
 
                 <div className="flex justify-center text-slate-600">
@@ -98,9 +100,9 @@ export const About: React.FC = () => {
                     <div className="w-5 h-5 rounded bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-[10px]">
                       02
                     </div>
-                    <span className="text-slate-200">OpenUSD & glTF Conformance</span>
+                    <span className="text-slate-200">Queues & OTel Observability</span>
                   </div>
-                  <span className="text-cyan-400 text-[10px]">Physics Schema</span>
+                  <span className="text-cyan-400 text-[10px]">Celery / Prometheus / Loki</span>
                 </div>
 
                 <div className="flex justify-center text-slate-600">
@@ -112,9 +114,9 @@ export const About: React.FC = () => {
                     <div className="w-5 h-5 rounded bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-[10px]">
                       03
                     </div>
-                    <span className="text-slate-200">Isaac Sim Domain Randomization</span>
+                    <span className="text-slate-200">CI/CD & Mobile Release</span>
                   </div>
-                  <span className="text-purple-400 text-[10px]">Lighting/Sensor Noise</span>
+                  <span className="text-purple-400 text-[10px]">GitHub Actions / Fastlane</span>
                 </div>
 
                 <div className="flex justify-center text-slate-600">
@@ -126,9 +128,9 @@ export const About: React.FC = () => {
                     <div className="w-5 h-5 rounded bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-[10px]">
                       04
                     </div>
-                    <span className="text-slate-200">Dual-Window / Console Validation</span>
+                    <span className="text-slate-200">Systems & Engine Render</span>
                   </div>
-                  <span className="text-amber-400 text-[10px]">C++ / 6DoF Telemetry</span>
+                  <span className="text-amber-400 text-[10px]">Unreal C++ / Isaac Sim</span>
                 </div>
               </div>
             </div>

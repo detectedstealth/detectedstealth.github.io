@@ -25,10 +25,10 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ isOpen
       output: (
         <div className="space-y-1 text-slate-300">
           <div className="text-emerald-400 font-bold">
-            BRUCE WADE // SYSTEMS ENGINEER & SIMULATION ARCHITECT (v2.4)
+            BRUCE WADE // PRINCIPAL SYSTEMS & SOFTWARE ENGINEER (v2.5)
           </div>
           <div className="text-xs text-slate-400">
-            Type <span className="text-cyan-300 font-semibold">help</span> to inspect available commands. Press <kbd className="px-1 bg-slate-800 rounded text-[10px]">ESC</kbd> or click X to close.
+            Type <span className="text-cyan-300 font-semibold">help</span> to inspect available commands (<span className="text-emerald-300">python</span>, <span className="text-emerald-300">mobile</span>, <span className="text-emerald-300">cicd</span>, <span className="text-emerald-300">otel</span>, <span className="text-emerald-300">ai</span>). Press <kbd className="px-1 bg-slate-800 rounded text-[10px]">ESC</kbd> or click X to close.
           </div>
         </div>
       ),
@@ -67,6 +67,12 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ isOpen
             <div className="text-cyan-400 font-semibold">Available Commands:</div>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-slate-300">
               <div><span className="text-emerald-300">about</span> - Systems architecture & bio</div>
+              <div><span className="text-emerald-300">python</span> - Python backend, Celery & 85% query opt</div>
+              <div><span className="text-emerald-300">mobile</span> - Swift/iOS, Kotlin & 12 Apress books</div>
+              <div><span className="text-emerald-300">automation</span> - Scraping bots, CLI tools & launchers</div>
+              <div><span className="text-emerald-300">cicd</span> - GitHub Actions, Jenkins & Fastlane</div>
+              <div><span className="text-emerald-300">otel</span> - OpenTelemetry, Loki, Tempo, Prometheus</div>
+              <div><span className="text-emerald-300">ai</span> - Agentic AI workflows & LLM tooling</div>
               <div><span className="text-emerald-300">skills</span> - Breakdown of core competencies</div>
               <div><span className="text-emerald-300">journey</span> - Career chronology & milestones</div>
               <div><span className="text-emerald-300">projects</span> - Shipped systems & blueprints</div>
@@ -76,6 +82,89 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ isOpen
               <div><span className="text-emerald-300">clear</span> - Clear terminal buffer</div>
               <div><span className="text-emerald-300">matrix</span> - Digital rain easter egg</div>
             </div>
+          </div>
+        );
+        break;
+
+      case 'python':
+      case 'django':
+      case 'fastapi':
+        res = (
+          <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="text-emerald-400 font-semibold">Python Distributed Systems & Query Optimization:</div>
+            <div>• <strong className="text-white">Experience:</strong> 15+ years across FastAPI, Django, Celery, Pyramid, and asyncio.</div>
+            <div>• <strong className="text-white">Recruitology Query Engine:</strong> Achieved an 85% reduction in relational ORM load via structural query caching and batching.</div>
+            <div>• <strong className="text-white">Async Task Queues:</strong> Distributed consumer workers on RabbitMQ, Redis, and Celery processing millions of jobs.</div>
+            <div>• <strong className="text-white">Web Extraction:</strong> Headless Scrapy spiders and automated data ingestion pipelines.</div>
+          </div>
+        );
+        break;
+
+      case 'mobile':
+      case 'ios':
+      case 'swift':
+        res = (
+          <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="text-cyan-400 font-semibold">Native Mobile Architecture & Apple Platforms:</div>
+            <div>• <strong className="text-white">Enterprise iOS:</strong> Salesforce Field Service Mobile App diagnostics & release stability across Swift, Obj-C, and C++.</div>
+            <div>• <strong className="text-white">Full-Stack Mobile:</strong> Dibiup cross-platform mobile architecture in Swift/SwiftUI and Kotlin with Django backends.</div>
+            <div>• <strong className="text-white">Author & Reviewer:</strong> 12 published Apple platform engineering volumes for Apress (Springer Nature).</div>
+            <div>• <strong className="text-white">Release Pipelines:</strong> Fastlane automated code signing (match), TestFlight, and Google Play multi-track deployment.</div>
+          </div>
+        );
+        break;
+
+      case 'automation':
+      case 'tools':
+      case 'scrapers':
+        res = (
+          <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="text-purple-400 font-semibold">End-to-End Automation & Custom Developer Tooling:</div>
+            <div>• <strong className="text-white">Web Scraping:</strong> High-concurrency Scrapy spiders with proxy rotation and automated deduplication.</div>
+            <div>• <strong className="text-white">Desktop Launchers:</strong> C# and Python automated environment bootstrappers for VR trackers and hardware.</div>
+            <div>• <strong className="text-white">Asset Tooling:</strong> Headless Blender and NVIDIA Kit batch CAD-to-USD conversion scripts.</div>
+            <div>• <strong className="text-white">Studio Consulting:</strong> 14+ years automating production workflows at Warply Designed Inc.</div>
+          </div>
+        );
+        break;
+
+      case 'cicd':
+      case 'jenkins':
+      case 'github':
+        res = (
+          <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="text-amber-400 font-semibold">CI/CD & Pipeline Orchestration:</div>
+            <div>• <strong className="text-white">GitHub Actions:</strong> Reusable matrix workflows, containerized test runners, and multi-platform build pipelines.</div>
+            <div>• <strong className="text-white">Jenkins:</strong> Declarative and scripted Jenkinsfile pipelines for enterprise legacy and cloud infrastructure.</div>
+            <div>• <strong className="text-white">Fastlane:</strong> Zero-touch mobile binary signing, artifact generation, and store distribution.</div>
+            <div>• <strong className="text-white">Zero Downtime:</strong> Containerized Docker & Kubernetes deployment strategies.</div>
+          </div>
+        );
+        break;
+
+      case 'otel':
+      case 'observability':
+      case 'telemetry':
+        res = (
+          <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="text-emerald-400 font-semibold">Observability & Telemetry Stack:</div>
+            <div>• <strong className="text-white">OpenTelemetry:</strong> Distributed tracing, span context propagation, and metric collection.</div>
+            <div>• <strong className="text-white">Tempo & Loki:</strong> High-volume trace visualization and structured log aggregation.</div>
+            <div>• <strong className="text-white">Prometheus & Grafana:</strong> Real-time latency dashboards, query metrics, and automated alerting.</div>
+            <div>• <strong className="text-white">Training:</strong> OpenTelemetry in Practice: The Complete Observability Course (LM Academy).</div>
+          </div>
+        );
+        break;
+
+      case 'ai':
+      case 'agents':
+      case 'agentic':
+        res = (
+          <div className="space-y-1.5 text-xs text-slate-300">
+            <div className="text-cyan-400 font-semibold">Agentic AI & LLM Orchestration:</div>
+            <div>• <strong className="text-white">Agent Architecture:</strong> Multi-step autonomous agent workflows with deterministic tool calling.</div>
+            <div>• <strong className="text-white">Integration:</strong> Python-driven LLM orchestration, structured output validation, and auto-evaluators.</div>
+            <div>• <strong className="text-white">Specialized Training:</strong> AI Coding & Agentic Systems Development (Ed Donner / Udemy).</div>
           </div>
         );
         break;

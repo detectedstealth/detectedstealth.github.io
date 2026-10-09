@@ -21,11 +21,12 @@ export const Portfolio: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const categories = [
-    { id: 'all', label: 'All Portfolios' },
-    { id: 'Simulation & C++', label: 'Simulation & C++' },
-    { id: 'Robotics & Physical AI', label: 'Robotics & AI' },
-    { id: 'Publications & Architecture', label: 'Published Books' },
-    { id: 'Enterprise Cloud & ML', label: 'Enterprise & ML' },
+    { id: 'all', label: 'All Projects' },
+    { id: 'Python & Distributed Systems', label: 'Python & Backend' },
+    { id: 'Mobile Architecture & Apple Platforms', label: 'Mobile & Apple' },
+    { id: 'Automation, CI/CD & Observability', label: 'Automation & CI/CD' },
+    { id: 'Low-Level Systems & C++', label: 'Systems & C++' },
+    { id: 'Simulation & Physical AI', label: 'Simulation & AI' },
   ];
 
   const filteredProjects = PROFILE_DATA.projects.filter((proj) => {
@@ -48,7 +49,7 @@ export const Portfolio: React.FC = () => {
                 Featured Systems & Platform Blueprints
               </h2>
               <p className="text-slate-400 font-mono text-xs sm:text-sm mt-1">
-                Deep-dive into production simulation engines, published engineering books, and custom pipeline tooling.
+                Deep-dive into high-throughput Python backends, native mobile architectures, 12 published books, CI/CD pipelines, and simulation engines.
               </p>
             </div>
           </div>

@@ -4,7 +4,7 @@ export interface CareerItem {
   company: string;
   period: string;
   location: string;
-  category: 'simulation' | 'engine' | 'enterprise' | 'author';
+  category: 'python' | 'mobile' | 'automation' | 'systems' | 'author';
   description: string;
   highlights: string[];
   techStack: string[];
@@ -29,60 +29,60 @@ export interface Certification {
   name: string;
   issuer: string;
   date?: string;
-  badgeType: 'unreal' | 'systems' | 'data' | 'hardware';
+  badgeType: 'unreal' | 'systems' | 'data' | 'hardware' | 'cloud' | 'ai';
 }
 
 export const PROFILE_DATA = {
   name: "Bruce Wade",
-  title: "Systems Engineer • Simulation & Tools • Founder",
-  headline: "Engineering Determinism for Physical AI, Robotics QA & High-Performance Engines",
+  title: "Principal Systems & Software Engineer • Python • Mobile Architecture • Automation",
+  headline: "Architecting Scalable Python Backends, Native Mobile Systems & Production Automation Pipelines",
   location: "Vancouver, British Columbia, Canada",
   email: "hello@brucewade.dev",
   linkedin: "https://www.linkedin.com/in/brucelwade",
   warplyUrl: "https://warplydesigned.com",
-  status: "Available for High-Impact Advisory & Systems Engineering Roles",
+  status: "Available for Principal Systems, Backend & Mobile Architecture Roles",
   timezone: "America/Vancouver",
   
   bio: [
-    "I’ve always gravitated toward complex systems — simulation, engine internals, tooling, compilers, and the technical spaces where clarity, determinism, and rigorous architecture matter most.",
-    "Recently, my work has focused on robotics synthetic data generation and Physical AI through consulting engagements requiring rapid ramp-up in NVIDIA Isaac Sim and the OpenUSD ecosystem. That revealed a massive industry bottleneck: how autonomous systems validate edge-case behaviors and achieve high-confidence deployment.",
-    "Whether architecting pipeline automation, building dual-window C++ Unreal rendering systems, or authoring 12 technical books, my methodology is grounded in deep understanding, low-level precision, and tools that drive measurable outcomes."
+    "Over 15+ years architecting high-throughput backend systems, mission-critical mobile applications, and resilient end-to-end automation pipelines across enterprise and startup environments.",
+    "Specialized in Python distributed microservices (Django, FastAPI, Celery/RabbitMQ, achieving 85% relational query optimization), native Apple platform architecture (author of 12 published Apress Swift books & Salesforce Field Service Mobile), and production CI/CD orchestration with GitHub Actions, Jenkins, and Fastlane.",
+    "Equally adept in low-level C++ systems, OpenTelemetry observability (Loki, Tempo, Prometheus, Grafana), Agentic AI workflow orchestration, and high-fidelity simulation engineering (Unreal Engine & NVIDIA Isaac Sim)."
   ],
 
   stats: [
     { label: "Years Engineering Complex Systems", value: "15+" },
     { label: "Technical Books Authored / Reviewed", value: "12" },
     { label: "Database Query Reduction Achieved", value: "85%" },
-    { label: "Core Focus", value: "Physical AI & Simulation" },
+    { label: "Core Pillars", value: "Python • Mobile • Auto • Sim" },
   ],
 
   pillars: [
     {
-      title: "Physical AI & Robotics Simulation",
-      subtitle: "Deterministic Synthetic Data & Scenario Generation",
-      description: "Building production pipelines in NVIDIA Isaac Sim and NVIDIA Kit. Automating CAD-to-USD conversion, domain randomization, and high-fidelity sensor simulation for autonomous systems QA.",
-      icon: "Cpu",
+      title: "High-Throughput Python & Distributed Systems",
+      subtitle: "Django, FastAPI, Async Queues & 85% Query Optimization",
+      description: "Architecting high-concurrency microservices, distributed worker task queues (Celery/RabbitMQ), PostgreSQL query optimization (85% reduction), web scrapers (Scrapy), and OpenTelemetry observability.",
+      icon: "Server",
       accentColor: "#00f5a0",
     },
     {
-      title: "Game Engine Internals & C++",
-      subtitle: "Unreal Engine, Multi-Window & Hardware SDKs",
-      description: "Engineering dual-window coordinated Unreal simulation systems, headless VR tracker input, real-time material calculations, shader pipelines (DirectX/OpenGL/C++), and proprietary console SDK integration.",
-      icon: "Layers",
+      title: "Native Mobile & Apple Platform Architecture",
+      subtitle: "Swift, SwiftUI, Objective-C, Kotlin & 12 Apress Books",
+      description: "Engineering enterprise iOS systems (Salesforce Field Service), cross-platform architectures (Dibiup Swift/Kotlin), automated App Store release pipelines (Fastlane), and authoring 12 technical Swift publications.",
+      icon: "Smartphone",
       accentColor: "#00d2ff",
     },
     {
-      title: "OpenUSD & Pipeline Automation",
-      subtitle: "High-Throughput Ingestion & Asset Tooling",
-      description: "Developing automated ingestion, validation, and transformation tools for massive engineering datasets across OpenUSD, glTF, Blender custom plugins, and Perforce pipelines.",
+      title: "End-to-End Automation, CI/CD & Agentic AI",
+      subtitle: "GitHub Actions, Jenkins, Fastlane, Docker, K8s & LLM Agents",
+      description: "Automating multi-stage build matrices, containerized deployments (Docker/K8s), headless ingestion pipelines, desktop automation launchers (C#/Python), and structured Agentic AI workflow tooling.",
       icon: "GitBranch",
       accentColor: "#a855f7",
     },
     {
-      title: "Scalable Enterprise & Cloud Infrastructure",
-      subtitle: "High-Concurrence Python, Django & Fast Tooling",
-      description: "Architecting backend systems, automated distributed task queues (Celery/RabbitMQ), C# desktop deployment automation launchers, and cloud microservices designed for 99.9% uptime.",
-      icon: "Server",
+      title: "Low-Level Systems, Engine & Simulation Tooling",
+      subtitle: "Modern C++, Unreal Engine, OpenUSD & Isaac Sim",
+      description: "Developing dual-window C++ simulation viewports, headless VR tracker telemetry, proprietary console platform SDK adaptations, and NVIDIA Isaac Sim / OpenUSD CAD automated ingestion pipelines.",
+      icon: "Cpu",
       accentColor: "#f59e0b",
     }
   ],
@@ -90,20 +90,20 @@ export const PROFILE_DATA = {
   experience: [
     {
       id: "warply",
-      role: "Founder & President",
+      role: "Founder & Principal Systems Consultant",
       company: "Warply Designed Inc.",
       period: "Sep 2012 - Present",
       location: "British Columbia, Canada",
-      category: "simulation",
-      description: "Directing high-stakes technical consulting across Unreal Engine, Python simulation tooling, Physical AI automation, and cloud microservices.",
+      category: "automation",
+      description: "Directing high-stakes technical consulting across Python backends, CI/CD automation, mobile architecture, and simulation systems.",
       highlights: [
-        "Led specialized consulting engagements spanning Unreal Engine, NVIDIA Kit/Isaac Sim, C++, Python, and SwiftUI.",
-        "Engineered custom pipeline tools and automated verification harnesses that maximized client team throughput.",
-        "Architected high-throughput backend services using Django and FastAPI for low-latency scalability.",
+        "Architected high-throughput backend services using Django and FastAPI with Redis and Celery distributed queues.",
+        "Engineered end-to-end automation pipelines, web scrapers (Scrapy), and custom desktop deployment launchers (C#/Python).",
+        "Led specialized simulation and systems engagements spanning Unreal Engine C++, NVIDIA Kit/Isaac Sim, and OpenUSD.",
         "Passed the official Unreal Technical Art Exam on behalf of a key client to secure their Unreal Service Partner designation."
       ],
-      techStack: ["Unreal Engine", "Isaac Sim", "OpenUSD", "Python", "C++", "FastAPI", "Django", "SwiftUI"],
-      impactMetric: "14+ Years of Technical Excellence"
+      techStack: ["Python", "FastAPI", "Django", "Celery", "CI/CD", "Docker", "Unreal Engine", "C++", "SwiftUI"],
+      impactMetric: "14+ Years of Enterprise Consulting & Systems Delivery"
     },
     {
       id: "theory-studios",
@@ -111,7 +111,7 @@ export const PROFILE_DATA = {
       company: "Theory Studios",
       period: "Mar 2025 - Aug 2026",
       location: "Remote",
-      category: "simulation",
+      category: "systems",
       description: "Spearheaded production pipelines, automated simulation workflows, and console SDK integrations for enterprise simulation and interactive graphics.",
       highlights: [
         "USD & CAD Automation: Developed internal tooling in Isaac Sim & NVIDIA Kit automating CAD asset conversion into USD/glTF formats, streamlining multi-gigabyte dataset ingestion.",
@@ -128,7 +128,7 @@ export const PROFILE_DATA = {
       company: "CG Pro (Connectors Program 24)",
       period: "Aug 2024 - Oct 2024",
       location: "Remote",
-      category: "engine",
+      category: "systems",
       description: "Mentored technical artists and directors on virtual production, ICVFX stage operations, and real-time Unreal Engine cinematics.",
       highlights: [
         "Guided industry professionals through real-time camera tracking, nDisplay setup, and virtual stage workflows.",
@@ -139,18 +139,18 @@ export const PROFILE_DATA = {
     },
     {
       id: "salesforce",
-      role: "Release Engineer III (Tools)",
+      role: "Release Engineer III (Mobile & Tools)",
       company: "Salesforce",
       period: "May 2021 - Jan 2023",
       location: "Vancouver - Remote",
-      category: "enterprise",
+      category: "mobile",
       description: "Core tooling and stability engineer for the mission-critical Field Service Mobile iOS Application.",
       highlights: [
-        "Diagnosed and patched complex bugs in the Field Service Mobile iOS codebase across C++, Objective-C, Swift, and JavaScript.",
-        "Enhanced cross-functional developer tooling, reducing release friction across multi-national engineering squads.",
+        "Diagnosed and patched complex bugs in the Field Service Mobile iOS codebase across Swift, Objective-C, C++, and JavaScript.",
+        "Enhanced cross-functional developer tooling and CI/CD pipelines, reducing release friction across multi-national engineering squads.",
         "Constructed custom automation utilizing Salesforce Flow, LWC (Lightning Web Components), and SOQL."
       ],
-      techStack: ["C++", "Objective-C", "Swift", "JavaScript", "Salesforce Flow", "LWC", "SOQL", "CI/CD"],
+      techStack: ["Swift", "Objective-C", "C++", "JavaScript", "Salesforce Flow", "LWC", "SOQL", "CI/CD", "Fastlane"],
       impactMetric: "Enterprise Mobile Infrastructure for Global Scale"
     },
     {
@@ -175,13 +175,14 @@ export const PROFILE_DATA = {
       company: "Dibiup",
       period: "Mar 2019 - Apr 2020",
       location: "Los Angeles, CA (Remote Vancouver)",
-      category: "enterprise",
+      category: "mobile",
       description: "Directed mobile and server architecture spanning Swift iOS, Kotlin Android, and Django backend services.",
       highlights: [
-        "Engineered native iOS app in Swift/SwiftUI and orchestrated full CI/CD deployment pipelines to App Store and Google Play.",
-        "Collaborated directly with executive leadership on core product roadmaps and technical scalability milestones."
+        "Engineered native iOS app in Swift/SwiftUI and Android in Kotlin with shared API specifications.",
+        "Orchestrated full CI/CD deployment pipelines to App Store and Google Play using Fastlane and Docker.",
+        "Architected scalable Django REST APIs backed by PostgreSQL with real-time push notifications."
       ],
-      techStack: ["Swift", "SwiftUI", "Kotlin", "Django", "PostgreSQL", "Docker", "Fastlane"],
+      techStack: ["Swift", "SwiftUI", "Kotlin", "Django", "PostgreSQL", "Docker", "Fastlane", "CI/CD"],
       impactMetric: "End-to-End Mobile & Cloud Architecture"
     },
     {
@@ -190,14 +191,14 @@ export const PROFILE_DATA = {
       company: "Recruitology U.S.",
       period: "Jan 2017 - Feb 2019",
       location: "San Francisco Bay Area - Remote",
-      category: "enterprise",
+      category: "python",
       description: "High-performance backend and ML pipeline engineering for large-scale recruitment distribution networks.",
       highlights: [
         "Engineered an innovative UI versioning engine for job listings that reduced Django ORM query load by 85%.",
         "Integrated heterogeneous 3rd-party candidate resume databases into a unified, high-speed query interface.",
         "Automated candidate matching pipelines with RabbitMQ, Celery, and custom in-house Machine Learning models."
       ],
-      techStack: ["Django", "Python", "RabbitMQ", "Celery", "Machine Learning", "Docker", "GCP", "PostgreSQL"],
+      techStack: ["Django", "Python", "RabbitMQ", "Celery", "PostgreSQL", "Machine Learning", "Docker", "GCP"],
       impactMetric: "85% Database ORM Query Reduction"
     },
     {
@@ -206,14 +207,14 @@ export const PROFILE_DATA = {
       company: "ventureLab Growth Partners",
       period: "Oct 2015 - Sep 2017",
       location: "San Francisco Bay Area - Remote",
-      category: "enterprise",
+      category: "python",
       description: "Engineered fintech and proptech platforms including PropertyHedge and 8Spaces booking platforms.",
       highlights: [
-        "Engineered PropertyHedge using Angular, AWS, and Django to enable mortgage-free residential investments.",
+        "Engineered PropertyHedge using Django, Angular, and AWS to enable mortgage-free residential investments.",
         "Solely created the 8Spaces iOS and web applications for flexible on-demand office workspace booking.",
         "Implemented high-throughput Adcoin ad-serving APIs and low-latency snippet generation engines."
       ],
-      techStack: ["Angular", "Django", "Swift iOS", "AWS", "REST APIs"],
+      techStack: ["Python", "Django", "Swift iOS", "Angular", "AWS", "REST APIs", "PostgreSQL"],
       impactMetric: "Shipped Scaled Fintech & Proptech Platforms"
     },
     {
@@ -222,7 +223,7 @@ export const PROFILE_DATA = {
       company: "YouAdWorld",
       period: "Aug 2011 - Aug 2012",
       location: "Burnaby, BC",
-      category: "enterprise",
+      category: "python",
       description: "Managed infrastructure, defeated critical DDoS attacks, and led core platform architecture.",
       highlights: [
         "Successfully mitigated a massive distributed DDoS attack in December 2011, restoring 100% service uptime.",
@@ -238,7 +239,7 @@ export const PROFILE_DATA = {
       company: "Chipkin Automation / Game Dev Freelance",
       period: "Jan 2008 - Aug 2011",
       location: "Vancouver, BC",
-      category: "engine",
+      category: "systems",
       description: "Foundational low-level systems programming in C/C++, Win32 APIs, DirectX 9, OpenGL, and automation tools.",
       highlights: [
         "Developed shader frameworks in C++ and MFC with OpenGL pixel drawing and geometry scripting.",
@@ -252,9 +253,72 @@ export const PROFILE_DATA = {
 
   projects: [
     {
+      id: "recruitology-ml-orm",
+      title: "Recruitology Query Engine & ML Task Pipeline",
+      category: "Python & Distributed Systems",
+      tagline: "High-throughput distributed candidate matching with 85% relational query reduction",
+      description: "Engineered a custom UI versioning and query optimization architecture for job distribution networks, drastically reducing relational database overhead while running automated candidate scoring through RabbitMQ and Celery ML workers.",
+      architectureDetails: [
+        "Devised a structural query caching and batching architecture cutting Django ORM load by 85%.",
+        "Built distributed worker consumers on Celery and RabbitMQ for asynchronous ML model inferences.",
+        "Integrated heterogeneous third-party candidate resume APIs into normalized schemas.",
+        "Instrumented service telemetry, database pooling, and asynchronous failure recovery."
+      ],
+      metrics: [
+        { label: "ORM Load Reduction", value: "85% Fewer Queries" },
+        { label: "Queue Infrastructure", value: "Celery + RabbitMQ" },
+        { label: "Scale", value: "Millions of Records" }
+      ],
+      tags: ["Python", "Django", "Celery", "RabbitMQ", "PostgreSQL", "Machine Learning", "Docker", "GCP"],
+      status: "Shipped",
+      featured: true
+    },
+    {
+      id: "enterprise-mobile-books",
+      title: "Native Mobile Systems & 12x Swift Books",
+      category: "Mobile Architecture & Apple Platforms",
+      tagline: "Enterprise iOS architecture (Salesforce / Dibiup) and 12 published Apple platform volumes",
+      description: "Authored 'OS X App Development with CloudKit and Swift' and reviewed 11 technical books for Apress (Springer Nature), coupled with leading enterprise iOS mobile development for Salesforce Field Service and Dibiup cross-platform mobile apps.",
+      architectureDetails: [
+        "Authored 'OS X App Development with CloudKit and Swift' detailing asynchronous cloud syncing patterns.",
+        "Reviewed 11 industry-standard books spanning Swift, Objective-C, and iOS architectural paradigms.",
+        "Diagnosed and resolved critical performance issues in Salesforce Field Service Mobile iOS.",
+        "Orchestrated Fastlane automated signing, TestFlight, and Google Play multi-track release pipelines."
+      ],
+      metrics: [
+        { label: "Published Books", value: "12 Apress Volumes" },
+        { label: "Mobile Scope", value: "Enterprise Scale iOS/Android" },
+        { label: "Automation", value: "Fastlane & CI/CD" }
+      ],
+      tags: ["Swift", "SwiftUI", "Objective-C", "Kotlin", "CloudKit", "Fastlane", "CI/CD", "Apress"],
+      status: "Published",
+      featured: true
+    },
+    {
+      id: "warply-custom-tools",
+      title: "Warply Designed Automation & Studio Systems",
+      category: "Automation, CI/CD & Observability",
+      tagline: "Bespoke studio pipeline automation, Scrapy bots, CI/CD pipelines, and cloud backends",
+      description: "Created customized Python automation scripts, Scrapy web scrapers, Blender headless plugins, FastAPI services, and C# desktop deployment launchers that streamlined asset generation and deployment across multi-studio teams.",
+      architectureDetails: [
+        "Automated asset processing pipelines with Python and Blender headless scripts.",
+        "Configured robust GitHub Actions and Jenkins CI/CD deployment pipelines.",
+        "Built resilient web scrapers and data ingestion bots using Scrapy and asyncio.",
+        "Implemented high-reliability client microservices with FastAPI and Django."
+      ],
+      metrics: [
+        { label: "Client Impact", value: "Multi-Studio Acceleration" },
+        { label: "Tooling Core", value: "Python / FastAPI / CI/CD" },
+        { label: "Automation Scope", value: "100% Headless Batch Ingestion" }
+      ],
+      tags: ["Python", "FastAPI", "Scrapy", "GitHub Actions", "Jenkins", "Docker", "Blender Plugins"],
+      status: "Production",
+      featured: true
+    },
+    {
       id: "dual-window-unreal",
       title: "Dual-Window Unreal Simulation Engine",
-      category: "Simulation & C++",
+      category: "Low-Level Systems & C++",
       tagline: "Coordinated touch-screen UI & headless VR tracking simulation architecture",
       description: "Architected a dual-window C++ Unreal Engine application synchronizing a physical touch-screen dashboard with a real-time 3D simulation window, featuring headless 6DoF hardware tracker ingestion, real-time material coating simulation, and sub-millisecond state replication.",
       architectureDetails: [
@@ -275,7 +339,7 @@ export const PROFILE_DATA = {
     {
       id: "isaac-sim-pipeline",
       title: "NVIDIA Isaac Sim Synthetic Data & Robotics QA",
-      category: "Robotics & Physical AI",
+      category: "Simulation & Physical AI",
       tagline: "High-fidelity synthetic scenario generation & automated CAD-to-USD ingestion",
       description: "Designed automated pipeline tooling within Isaac Sim and NVIDIA Kit to ingest large enterprise CAD assemblies, sanitize hierarchy semantics, generate deterministic OpenUSD assets, and construct domain-randomized synthetic data for training and evaluating autonomous robotic perception systems.",
       architectureDetails: [
@@ -291,7 +355,7 @@ export const PROFILE_DATA = {
       ],
       tags: ["Isaac Sim", "NVIDIA Kit", "OpenUSD", "glTF", "Python", "Robotics QA", "Synthetic Data"],
       status: "Production",
-      featured: true
+      featured: false
     },
     {
       id: "console-sdk-integration",
@@ -311,105 +375,56 @@ export const PROFILE_DATA = {
       ],
       tags: ["Console Dev", "C++", "Platform SDKs", "Optimization", "Perforce"],
       status: "Production",
-      featured: true
-    },
-    {
-      id: "apress-books",
-      title: "12x Swift & Cloud Architecture Books",
-      category: "Publications & Architecture",
-      tagline: "Author of 'OS X App Development with CloudKit' and technical reviewer for 11 books",
-      description: "Authored and technically reviewed 12 published books for Apress (Springer Nature), establishing standard design patterns for Apple platforms, CloudKit data replication, and modern Swift development.",
-      architectureDetails: [
-        "Authored 'OS X App Development with CloudKit and Swift' detailing asynchronous cloud syncing patterns.",
-        "Reviewed 11 books spanning beginner to advanced Swift, Objective-C, and iOS architectural paradigms.",
-        "Standardized sample code repositories for millions of developers worldwide."
-      ],
-      metrics: [
-        { label: "Total Books", value: "12 Published Volumes" },
-        { label: "Publisher", value: "Apress / Springer Nature" },
-        { label: "Global Readership", value: "Tens of Thousands" }
-      ],
-      tags: ["Swift", "CloudKit", "macOS", "iOS", "Apress", "Books"],
-      status: "Published",
-      featured: true
-    },
-    {
-      id: "recruitology-ml-orm",
-      title: "Recruitology Query Engine & ML Pipeline",
-      category: "Enterprise Cloud & ML",
-      tagline: "High-throughput distributed candidate matching with 85% query reduction",
-      description: "Engineered a custom UI versioning and query optimization layer for job distribution networks, drastically reducing relational database overhead while running automated candidate scoring through RabbitMQ and Celery ML workers.",
-      architectureDetails: [
-        "Devised a structural query caching and batching architecture cutting ORM load by 85%.",
-        "Built distributed worker consumers on Celery and RabbitMQ for asynchronous ML model inferences.",
-        "Integrated heterogeneous third-party candidate resume APIs into normalized schemas."
-      ],
-      metrics: [
-        { label: "ORM Load Reduction", value: "85% Fewer Queries" },
-        { label: "Queue Infrastructure", value: "Celery + RabbitMQ" },
-        { label: "Scale", value: "Millions of Job Posts" }
-      ],
-      tags: ["Django", "Python", "Celery", "RabbitMQ", "Machine Learning", "Docker"],
-      status: "Shipped",
-      featured: false
-    },
-    {
-      id: "warply-custom-tools",
-      title: "Warply Designed Automation & Studio Systems",
-      category: "Tools & Consulting",
-      tagline: "Bespoke studio pipeline automation, plugins, and cloud backends",
-      description: "Created customized Python automation scripts, Blender plugins, FastAPI services, and desktop launchers that streamlined content generation and engineering workflows across diverse client teams.",
-      architectureDetails: [
-        "Automated asset processing pipelines with Python and Blender headless scripts.",
-        "Configured robust CI/CD and deployment scripts for Unreal Engine projects.",
-        "Implemented high-reliability client microservices with FastAPI and Django."
-      ],
-      metrics: [
-        { label: "Client Impact", value: "Multi-Studio Acceleration" },
-        { label: "Tooling Core", value: "Python / FastAPI / C++" }
-      ],
-      tags: ["Python", "FastAPI", "Blender Plugins", "Automation", "CI/CD"],
-      status: "Production",
       featured: false
     }
   ] as ProjectItem[],
 
   skills: {
-    simulationAndRobotics: [
-      { name: "NVIDIA Isaac Sim", level: 95 },
-      { name: "OpenUSD (Universal Scene Description)", level: 92 },
-      { name: "glTF & CAD Ingestion", level: 90 },
-      { name: "Synthetic Data Generation", level: 94 },
-      { name: "Robotics QA & Scenario Generation", level: 90 },
-      { name: "NVIDIA Kit Applications", level: 88 },
+    pythonAndAi: [
+      { name: "Python (Async, FastAPI, Django, Scrapy)", level: 98 },
+      { name: "Celery & RabbitMQ Task Pipelines", level: 94 },
+      { name: "PostgreSQL & Database Query Optimization (85% reduction)", level: 95 },
+      { name: "Agentic AI Workflows & LLM Tool Calling", level: 92 },
+      { name: "RESTful APIs & Microservice Architecture", level: 95 },
+      { name: "Machine Learning & Ingestion Pipelines", level: 88 },
     ],
-    engineAndGraphics: [
-      { name: "Unreal Engine (C++ / Blueprints)", level: 96 },
-      { name: "Virtual Production & ICVFX", level: 88 },
-      { name: "Dual-Window & Multi-Viewport Rendering", level: 95 },
-      { name: "Shader Programming (DirectX / OpenGL)", level: 85 },
-      { name: "Proprietary Console SDKs", level: 86 },
-      { name: "VR & Hardware Tracker Ingestion", level: 90 },
+    mobileAndApple: [
+      { name: "Swift & SwiftUI (iOS / macOS)", level: 96 },
+      { name: "Objective-C & Native iOS Internals", level: 90 },
+      { name: "Kotlin (Android Development)", level: 86 },
+      { name: "CloudKit & Mobile Data Synchronization", level: 92 },
+      { name: "Mobile Release Automation (Fastlane)", level: 94 },
+      { name: "Enterprise Mobile Architecture (Salesforce)", level: 90 },
     ],
-    languagesAndTools: [
-      { name: "C++ (Modern C++17/20)", level: 94 },
-      { name: "Python (Async, FastAPI, Scrapy, ML)", level: 98 },
-      { name: "Swift & SwiftUI", level: 92 },
-      { name: "C# / .NET Tools", level: 88 },
-      { name: "Perforce & Git", level: 95 },
-      { name: "Docker & Linux Systems", level: 90 },
+    automationAndDevops: [
+      { name: "CI/CD & Pipeline Orchestration (GitHub Actions, Jenkins)", level: 95 },
+      { name: "Observability (OpenTelemetry, Loki, Tempo, Prometheus, Grafana)", level: 92 },
+      { name: "Docker, Kubernetes & Containerization", level: 90 },
+      { name: "Custom CLI Tools & Desktop Launchers (C# / Python)", level: 94 },
+      { name: "Web Scraping & Real-Time Ingestion (Scrapy)", level: 92 },
+      { name: "Perforce & Git Branching Workflows", level: 95 },
     ],
-    enterpriseAndCloud: [
-      { name: "Django & REST Framework", level: 96 },
-      { name: "PostgreSQL & Database Optimization", level: 92 },
-      { name: "Celery & RabbitMQ Task Pipelines", level: 90 },
-      { name: "AWS & Google Cloud Platform", level: 86 },
-      { name: "CI/CD & Deployment Automation", level: 92 },
-      { name: "Salesforce Flow & LWC", level: 82 },
+    systemsAndEngines: [
+      { name: "Modern C++ (C++17/20, Win32, Systems)", level: 94 },
+      { name: "Unreal Engine (C++ / Blueprints / ICVFX)", level: 95 },
+      { name: "NVIDIA Isaac Sim & OpenUSD", level: 92 },
+      { name: "Dual-Window & Multi-Viewport Rendering", level: 94 },
+      { name: "Shader Programming (DirectX / OpenGL)", level: 86 },
+      { name: "Console Platform SDKs & Hardware Ingestion", level: 88 },
     ]
   },
 
   certifications: [
+    {
+      name: "OpenTelemetry in Practice: The Complete Observability Course",
+      issuer: "LM Academy",
+      badgeType: "data"
+    },
+    {
+      name: "AI Coding & Agentic Systems Development",
+      issuer: "Ed Donner / Udemy",
+      badgeType: "ai"
+    },
     {
       name: "Helix Core and Unreal Engine in Virtual Production",
       issuer: "Perforce Software",

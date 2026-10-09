@@ -17,7 +17,7 @@ import {
 import { PROFILE_DATA } from '@/data/profileData';
 
 export const ContactSection: React.FC = () => {
-  const [subject, setSubject] = useState('Simulation & Physical AI Advisory');
+  const [subject, setSubject] = useState('Principal Python & Distributed Systems Architecture');
   const [senderName, setSenderName] = useState('');
   const [senderEmail, setSenderEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -90,7 +90,7 @@ export const ContactSection: React.FC = () => {
             Initiate Systems Discussion
           </h2>
           <p className="text-slate-400 font-mono text-xs sm:text-sm max-w-2xl">
-            Open for technical advisory, robotics synthetic data pipelines, Unreal Engine C++ architecture, and high-impact systems engineering engagements.
+            Open for principal systems engineering, scalable Python backend architectures, native mobile platforms, CI/CD pipeline automation, and technical advisory engagements.
           </p>
         </div>
 
@@ -221,10 +221,13 @@ export const ContactSection: React.FC = () => {
                   onChange={(e) => setSubject(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs font-mono text-slate-200 focus:border-emerald-500 focus:outline-none"
                 >
-                  <option value="Simulation & Physical AI Advisory">Simulation & Physical AI Advisory</option>
-                  <option value="Isaac Sim & OpenUSD Pipeline Ingestion">Isaac Sim & OpenUSD Pipeline Ingestion</option>
-                  <option value="Dual-Window Unreal Engine C++ Systems">Dual-Window Unreal Engine C++ Systems</option>
-                  <option value="Enterprise Architecture & Scaling">Enterprise Architecture & Scaling</option>
+                  <option value="Principal Python & Distributed Systems Architecture">Principal Python & Distributed Systems Architecture</option>
+                  <option value="Native Mobile & Apple Platform Engineering (iOS/Android)">Native Mobile & Apple Platform Engineering (iOS/Android)</option>
+                  <option value="CI/CD, Pipeline Automation & Observability (OTel)">CI/CD, Pipeline Automation & Observability (OTel)</option>
+                  <option value="Agentic AI Workflows & LLM Tooling">Agentic AI Workflows & LLM Tooling</option>
+                  <option value="Low-Level Systems & Game Engine (C++ / Unreal)">Low-Level Systems & Game Engine (C++ / Unreal)</option>
+                  <option value="Physical AI, Isaac Sim & OpenUSD Simulation">Physical AI, Isaac Sim & OpenUSD Simulation</option>
+                  <option value="Technical Advisory & Systems Consulting">Technical Advisory & Systems Consulting</option>
                   <option value="Technical Review & Book Publishing">Technical Review & Book Publishing</option>
                   <option value="General Systems Collaboration">General Systems Collaboration</option>
                 </select>
@@ -252,7 +255,7 @@ export const ContactSection: React.FC = () => {
                     required
                     value={senderEmail}
                     onChange={(e) => setSenderEmail(e.target.value)}
-                    placeholder="e.g. elena@robotics-corp.com"
+                    placeholder="e.g. elena@company.com"
                     className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs font-mono text-slate-200 focus:border-emerald-500 focus:outline-none placeholder:text-slate-600"
                   />
                 </div>
@@ -266,7 +269,7 @@ export const ContactSection: React.FC = () => {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Describe your simulation requirements, architecture challenge, or collaboration proposal..."
+                  placeholder="Describe your Python backend architecture, mobile project, automation challenge, or collaboration proposal..."
                   className="w-full bg-slate-900 border border-slate-800 rounded-xl p-4 text-xs font-mono text-slate-200 focus:border-emerald-500 focus:outline-none placeholder:text-slate-600 resize-none"
                 />
               </div>
