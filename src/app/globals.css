@@ -15,7 +15,7 @@
 body {
   background-color: var(--bg-primary);
   color: #e2e8f0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   selection-background-color: #00f5a0;
   selection-color: #06080d;
@@ -119,4 +119,15 @@ body {
   0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
   50% { transform: translate(-50%, -50%) scale(1.6); opacity: 0.2; }
   100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+}
+
+/* Defer rendering offscreen sections for faster initial paint */
+#about,
+#sim-lab,
+#journey,
+#portfolio,
+#skills,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
 }

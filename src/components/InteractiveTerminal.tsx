@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Terminal as TerminalIcon, X, Maximize2, Minimize2, CornerDownLeft, Sparkles } from 'lucide-react';
 import { PROFILE_DATA } from '@/data/profileData';
-import { MatrixRain } from '@/components/MatrixRain';
 
 interface InteractiveTerminalProps {
   isOpen: boolean;
@@ -80,7 +79,6 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ isOpen
               <div><span className="text-emerald-300">sim</span> - Execute Isaac Sim step</div>
               <div><span className="text-emerald-300">contact</span> - Direct links & email</div>
               <div><span className="text-emerald-300">clear</span> - Clear terminal buffer</div>
-              <div><span className="text-emerald-300">matrix</span> - Digital rain easter egg</div>
             </div>
           </div>
         );
@@ -257,23 +255,6 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ isOpen
         setOutputs([]);
         setInputVal('');
         return;
-
-      case 'matrix':
-      case 'rain':
-        res = (
-          <div className="space-y-2 my-1">
-            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-              <span className="font-semibold">[NEURAL PROTOCOL ENGAGED] Digital rain stream initiated:</span>
-            </div>
-            <MatrixRain height={220} interactive={true} />
-            <div className="text-[11px] font-mono text-slate-400 flex items-center justify-between px-1">
-              <span>Wake up, systems architect... Isaac Sim stage is rendering in real-time.</span>
-              <span className="text-emerald-400 font-bold">STATUS: LIVE STREAMING</span>
-            </div>
-          </div>
-        );
-        break;
 
       case 'sudo':
         res = (

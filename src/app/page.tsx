@@ -1,16 +1,35 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
-import { SimLabWidget } from '@/components/SimLabWidget';
 import { CareerJourney } from '@/components/CareerJourney';
 import { Portfolio } from '@/components/Portfolio';
 import { SkillsCertifications } from '@/components/SkillsCertifications';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
-import { InteractiveTerminal } from '@/components/InteractiveTerminal';
+
+// Code-split heavy interactive components to drastically reduce initial JS bundle size and TTI
+const SimLabWidget = dynamic(
+  () => import('@/components/SimLabWidget').then((mod) => mod.SimLabWidget),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 font-mono text-sm">
+        <div className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 animate-pulse">
+          Loading Systems & Automation Workbench...
+        </div>
+      </div>
+    ),
+  }
+);
+
+const InteractiveTerminal = dynamic(
+  () => import('@/components/InteractiveTerminal').then((mod) => mod.InteractiveTerminal),
+  { ssr: false }
+);
 
 export default function Home() {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);

@@ -47,7 +47,7 @@ The design aesthetic blends **Enterprise Credibility** with an **Edgy Cybernetic
 
 8. **Interactive Developer CLI Terminal**:
    - Built-in terminal emulator triggered via the navbar, header, or by pressing `` ` `` (backtick) / `~`.
-   - Supports runnable commands: `python`, `mobile`, `automation`, `cicd`, `otel`, `ai`, `help`, `about`, `skills`, `journey`, `projects`, `books`, `sim`, `contact`, `matrix`, `sudo`, `clear`.
+   - Supports runnable commands: `python`, `mobile`, `automation`, `cicd`, `otel`, `ai`, `help`, `about`, `skills`, `journey`, `projects`, `books`, `sim`, `contact`, `sudo`, `clear`.
 
 9. **Direct Engagement Hub & Dispatcher**:
    - Interactive message protocol generator with email client integration and visual feedback.

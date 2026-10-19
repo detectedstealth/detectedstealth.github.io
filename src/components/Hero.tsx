@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
     const interval = setInterval(() => {
       // Subtle organic FPS fluctuation between 118 and 124
       setFps(Math.floor(118 + Math.random() * 7));
-    }, 1500);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -47,10 +47,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimLab, onOpenTerminal }) => {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex flex-col justify-center overflow-hidden hud-grid">
-      {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-purple-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+      {/* Ambient background glows using performant CSS radial gradients */}
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none -z-10"
+        style={{ background: 'radial-gradient(circle, rgba(0,245,160,0.12) 0%, transparent 70%)' }}
+      />
+      <div
+        className="absolute top-1/3 right-10 w-[400px] h-[400px] pointer-events-none -z-10"
+        style={{ background: 'radial-gradient(circle, rgba(0,210,255,0.12) 0%, transparent 70%)' }}
+      />
+      <div
+        className="absolute bottom-10 left-10 w-[450px] h-[450px] pointer-events-none -z-10"
+        style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)' }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Top Badges */}
